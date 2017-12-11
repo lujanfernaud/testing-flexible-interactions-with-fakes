@@ -19,9 +19,8 @@ describe Signup do
         expect(Account).to have_received(:create!).with(name: "Example")
         expect(User).to have_received(:create!)
           .with(account: account, email: "user@example.com")
-        expect(logger.message)
-          .to eq("Created user user@example.com with account Example")
-        expect(logger.message_type).to eq(:debug)
+        expect(logger.output)
+          .to eq("DEBUG: Created user user@example.com with account Example")
         expect(result).to be(true)
       end
     end
@@ -39,8 +38,7 @@ describe Signup do
 
         result = signup.save
 
-        expect(logger.message).to eq("Name is already taken")
-        expect(logger.message_type).to eq(:error)
+        expect(logger.output).to eq("ERROR: Name is already taken")
         expect(result).to be(false)
       end
     end
@@ -58,8 +56,7 @@ describe Signup do
 
         result = signup.save
 
-        expect(logger.message).to eq("Email is already taken")
-        expect(logger.message_type).to eq(:error)
+        expect(logger.output).to eq("ERROR: Email is already taken")
         expect(result).to be(false)
       end
     end

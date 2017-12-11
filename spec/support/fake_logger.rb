@@ -1,18 +1,11 @@
 class FakeLogger
-  attr_reader :message, :message_type
-
-  def initialize
-    @message = ""
-    @message_type = ""
-  end
+  attr_reader :output
 
   def debug(message)
-    @message = message
-    @message_type = :debug
+    @output = "DEBUG: #{message}"
   end
 
   def error(message)
-    @message = message
-    @message_type = :error
+    @output = "ERROR: #{message}"
   end
 end
