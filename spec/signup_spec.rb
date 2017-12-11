@@ -21,7 +21,7 @@ describe Signup do
           .with(account: account, email: "user@example.com")
         expect(logger.message)
           .to eq("Created user user@example.com with account Example")
-        expect(logger.message_type).to eq(:info)
+        expect(logger.message_type).to eq(:debug)
         expect(result).to be(true)
       end
     end

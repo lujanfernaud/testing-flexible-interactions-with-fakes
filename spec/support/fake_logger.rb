@@ -6,9 +6,9 @@ class FakeLogger
     @message_type = ""
   end
 
-  def info(message)
+  def debug(message)
     @message = message
-    @message_type = :info
+    @message_type = :debug
   end
 
   def error(message)
