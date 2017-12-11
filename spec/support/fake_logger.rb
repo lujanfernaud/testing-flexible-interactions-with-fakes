@@ -5,7 +5,7 @@ class FakeLogger
     @output = "DEBUG: #{message}"
   end
 
-  def error(message)
-    @output = "ERROR: #{message}"
+  def fatal(message)
+    @output = "FATAL: #{message}"
   end
 end

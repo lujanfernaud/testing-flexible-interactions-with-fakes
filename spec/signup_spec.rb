@@ -38,7 +38,7 @@ describe Signup do
 
         result = signup.save
 
-        expect(logger.output).to eq("ERROR: Name is already taken")
+        expect(logger.output).to eq("FATAL: Name is already taken")
         expect(result).to be(false)
       end
     end
@@ -56,7 +56,7 @@ describe Signup do
 
         result = signup.save
 
-        expect(logger.output).to eq("ERROR: Email is already taken")
+        expect(logger.output).to eq("FATAL: Email is already taken")
         expect(result).to be(false)
       end
     end

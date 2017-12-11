@@ -14,7 +14,7 @@ class Signup
     @logger.debug("Created user #{@email} with account #{@account_name}")
     true
   rescue StandardError => error
-    @logger.error(error.message)
+    @logger.fatal(error.message)
     false
   end
 end
